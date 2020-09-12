@@ -8,10 +8,10 @@ import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 
-public class EntityMVWorm extends MonsterEntity {
-    public EntityMVWorm(EntityType<? extends EntityMVWorm> type, World world) {
-        super(type, world);
-    }
+public class EntityMVWorm extends MonsterEntity
+{
+
+    public EntityMVWorm(EntityType<? extends EntityMVWorm> type, World worldIn) { super(type, worldIn);}
 
     @Override
     protected void registerGoals() {
@@ -22,10 +22,10 @@ public class EntityMVWorm extends MonsterEntity {
         this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, PlayerEntity.class, true));
     }
-    public static AttributeModifierMap.MutableAttribute registerAttributes() {
-        System.out.println("Attribute getting loaded!");
-        return MonsterEntity.func_233666_p_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 20.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.28D);
-    }
+
+        public static AttributeModifierMap.MutableAttribute registerAttributes() {
+            return MonsterEntity.func_234295_eP_()
+                    .createMutableAttribute(Attributes.MAX_HEALTH, 40.0D)
+                    .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.28D);
+        }
 }

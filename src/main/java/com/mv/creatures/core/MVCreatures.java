@@ -28,10 +28,10 @@ public class MVCreatures
 
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     private static final String MODEL_DIR = "textures/model/";
-   // public static final MVCreaturesRegistryHelper REGISTRY_HELPER = new MVCreaturesRegistryHelper(MOD_ID);
+
 
     public MVCreatures() {
-     //   DistExecutor.safeRunWhenOn(Dist.CLIENT,() ->(DistExecutor.SafeRunnable) mvcreatures.client.MVClientSetup::addLegacyPack);
+
         MinecraftForge.EVENT_BUS.addListener(this::startServer);
 
         IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
