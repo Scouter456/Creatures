@@ -1,5 +1,10 @@
 {
   "itemGroup.mvcreatures": "MVCreatures",
+
   "block.mvcreatures.earth_block": "Earth Block",
-  "block.mvcreatures.jink_block": "Jink Block"
+  "block.mvcreatures.jink_block": "Jink Block",
+  
+  "item.mvcreatures.sand_worm_spawn_egg": "Sand Worm Spawn Egg",
+  
+  "entity.mvcreatures.sand_worm": "Sand Worm"
 }

@@ -36,21 +36,21 @@ public class MVEntities {
         return build(id, makeBuilder(factory, classification).size(width, height));
     }
 
-    private static <E extends Entity> EntityType<E> make(ResourceLocation id, EntityType.IFactory<E> factory, EntityClassification classification) {
+   /* private static <E extends Entity> EntityType<E> make(ResourceLocation id, EntityType.IFactory<E> factory, EntityClassification classification) {
         return make(id, factory, classification, 0.6F, 1.8F);
     }
-
+*/
     @SuppressWarnings("unchecked")
     private static <E extends Entity> EntityType<E> build(ResourceLocation id, EntityType.Builder<E> builder) {
         EntityType<E> ret = (EntityType<E>) builder.build(id.toString()).setRegistryName(id);
         ALL.add(ret);
         return ret;
     }
-
+/*
     private static <E extends Entity> EntityType.Builder<E> makeCastedBuilder(@SuppressWarnings("unused") Class<E> cast, EntityType.IFactory<E> factory, EntityClassification classification) {
         return makeBuilder(factory, classification);
     }
-
+*/
     private static <E extends Entity> EntityType.Builder<E> makeBuilder(EntityType.IFactory<E> factory, EntityClassification classification) {
         return EntityType.Builder.create(factory, classification).
                 size(0.6F, 1.8F).
