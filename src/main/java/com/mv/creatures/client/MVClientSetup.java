@@ -16,6 +16,7 @@ public class MVClientSetup {
     public static void clientSetup(FMLClientSetupEvent evt) {
 
         MVEntities.registerEntityRenderer();
+
     }
 
     @SubscribeEvent

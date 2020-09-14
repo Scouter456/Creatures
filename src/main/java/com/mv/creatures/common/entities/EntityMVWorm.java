@@ -13,6 +13,7 @@ public class EntityMVWorm extends MonsterEntity
 
     public EntityMVWorm(EntityType<? extends EntityMVWorm> type, World worldIn) { super(type, worldIn);}
 
+
     @Override
     protected void registerGoals() {
         this.goalSelector.addGoal(1, new SwimGoal(this));

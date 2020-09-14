@@ -19,7 +19,7 @@ public class ModelMVWorm extends SegmentedModel<EntityMVWorm> {
         textureHeight = 32;
 
         block = new ModelRenderer(this, 0,4);
-        block.addBox(-1F,-1F,-1F,1,1,1);
+        block.addBox(-10F,-10F,-10F,10F,10F,10F);
         block.setRotationPoint(-0.5F,-0.5F,-0.5F);
 
     }
