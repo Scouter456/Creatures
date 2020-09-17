@@ -13,37 +13,41 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 public class ModelMVWorm extends SegmentedModel<EntityMVWorm> {
     ModelRenderer block;
 
-    public ModelMVWorm(){
+    public ModelMVWorm() {
         super(RenderType::getEntityCutoutNoCull);
         textureWidth = 32;
         textureHeight = 32;
 
-        block = new ModelRenderer(this, 0,4);
-        block.addBox(-10F,-10F,-10F,10F,10F,10F);
-        block.setRotationPoint(-0.5F,-0.5F,-0.5F);
+        block = new ModelRenderer(this, 0, 4);
+        block.addBox(-10F, -10F, -10F, 10F, 10F, 10F);
+        block.setRotationPoint(-0.5F, -0.5F, -0.5F);
 
     }
-
 
 
     @Override
-    public Iterable<ModelRenderer> getParts(){
+    public Iterable<ModelRenderer> getParts() {
         return ImmutableList.of(
                 block
-                );
+        );
     }
 
-    private void setRotation(ModelRenderer model, float x, float y, float z){
+    private void setRotation(ModelRenderer model, float x, float y, float z) {
         model.rotateAngleX = x;
         model.rotateAngleY = y;
         model.rotateAngleZ = z;
     }
+
+
+    @Override
+    public void render(MatrixStack ms, IVertexBuilder buffer, int light, int overlay, float r, float g, float b, float a) {
+        block.render(ms, buffer, light, overlay, r, g, b, a);
+    }
+
     @Override
     public void setRotationAngles(EntityMVWorm model, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+        this.block.rotateAngleX = netHeadYaw / (180F/(float) Math.PI);
+        this.block.rotateAngleY = netHeadYaw / (180F/(float) Math.PI);
 
-    }
-    @Override
-    public void render(MatrixStack ms, IVertexBuilder buffer, int light, int overlay, float r, float g, float b, float a){
-        block.render(ms, buffer, light, overlay, r, g, b,a);
     }
 }

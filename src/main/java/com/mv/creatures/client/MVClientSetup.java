@@ -15,6 +15,7 @@ public class MVClientSetup {
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent evt) {
 
+        RenderLayerRegistration.init();
         MVEntities.registerEntityRenderer();
 
     }

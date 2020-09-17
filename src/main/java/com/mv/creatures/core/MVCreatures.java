@@ -23,7 +23,6 @@ import org.apache.logging.log4j.Logger;
 public class MVCreatures
 {
     public static final String MOD_ID = "mvcreatures";
-
     public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
     private static final String MODEL_DIR = "textures/model/";
     public static MVCreatures instance;
@@ -31,31 +30,33 @@ public class MVCreatures
     public MVCreatures() {
     instance = this;
         MinecraftForge.EVENT_BUS.addListener(this::startServer);
-
         IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
         MVBlocks.BLOCKS.register(modbus);
         MVItems.ITEMS.register(modbus);
-
-
         modbus.addListener(EventPriority.LOWEST, this::setupCommon);
+
+
     }
 
     void setupCommon(final FMLCommonSetupEvent evt) {
         DeferredWorkQueue.runLater(() ->{
-
             MVEntities.addEntityAttributes();
+
         });
 
     }
 
     public void startServer(FMLServerAboutToStartEvent event) {
+
     }
 
     public static ResourceLocation prefix(String name) {
         return new ResourceLocation(MOD_ID, name);
+
     }
 
     public static ResourceLocation getModelTexture(String name) {
         return new ResourceLocation(MOD_ID, MODEL_DIR + name);
+
     }
 }

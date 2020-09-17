@@ -1,11 +1,20 @@
 package com.mv.creatures.common.entities;
 
+import com.mv.creatures.common.blocks.MVBlocks;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.DamageSource;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 
 public class EntityMVWorm extends MonsterEntity
@@ -29,4 +38,22 @@ public class EntityMVWorm extends MonsterEntity
                     .createMutableAttribute(Attributes.MAX_HEALTH, 40.0D)
                     .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.28D);
         }
+
+    @Override
+    public void livingTick(){
+        super.livingTick();
+        BlockPos pos = new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ()));
+        BlockState blockstate = MVBlocks.flail_glass.get().getDefaultState();
+        if(this.isOnGround() && this.world.isAirBlock(pos) && this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) && blockstate.isValidPosition(this.world, pos) && this.world.getBiome(pos).getTemperature(pos) < 1.2F){
+            this.world.setBlockState(pos, blockstate);
+
+        }
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source)   { return SoundEvents.ENTITY_SPIDER_HURT;
+    }
+    @Override
+    protected SoundEvent getDeathSound()   { return SoundEvents.ENTITY_SPIDER_DEATH;
+    }
 }
