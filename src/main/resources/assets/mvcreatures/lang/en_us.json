@@ -3,7 +3,9 @@
 
   "block.mvcreatures.earth_block": "Earth Block",
   "block.mvcreatures.jink_block": "Jink Block",
-  
+  "block.mvcreatures.flail_mucus": "Flail Snail Mucus",
+  "block.mvcreatures.dried_flail_mucus": "Dried Flail Snail Mucus",
+
   "item.mvcreatures.sand_worm_spawn_egg": "Sand Worm Spawn Egg",
   
   "entity.mvcreatures.sand_worm": "Sand Worm"

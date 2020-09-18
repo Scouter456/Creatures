@@ -4,8 +4,9 @@ import net.minecraft.util.IStringSerializable;
 
 import java.util.Locale;
 
-public enum GlassVariant implements IStringSerializable {
-    flail_glass();
+public enum MucusVariant implements IStringSerializable {
+    flail_mucus(),
+    dried_flail_mucus();
 
     @Override
     public String getString() {

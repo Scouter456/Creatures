@@ -43,7 +43,7 @@ public class EntityMVWorm extends MonsterEntity
     public void livingTick(){
         super.livingTick();
         BlockPos pos = new BlockPos(MathHelper.floor(this.getPosX()), MathHelper.floor(this.getPosY()), MathHelper.floor(this.getPosZ()));
-        BlockState blockstate = MVBlocks.flail_glass.get().getDefaultState();
+        BlockState blockstate = MVBlocks.flail_mucus.get().getDefaultState();
         if(this.isOnGround() && this.world.isAirBlock(pos) && this.world.getGameRules().getBoolean(GameRules.MOB_GRIEFING) && blockstate.isValidPosition(this.world, pos) && this.world.getBiome(pos).getTemperature(pos) < 1.2F){
             this.world.setBlockState(pos, blockstate);
 

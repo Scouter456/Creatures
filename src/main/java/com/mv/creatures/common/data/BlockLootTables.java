@@ -21,6 +21,7 @@ public class BlockLootTables extends net.minecraft.data.loot.BlockLootTables{
     protected void addTables(){
 
         registerDropSelfLootTable(MVBlocks.earth_block.get());
-        registerSilkTouch(MVBlocks.flail_glass.get());
+        registerSilkTouch(MVBlocks.flail_mucus.get());
+        registerSilkTouch(MVBlocks.dried_flail_mucus.get());
     }
 }

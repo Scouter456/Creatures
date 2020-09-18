@@ -28,6 +28,8 @@ public class ItemModelGenerator extends ItemModelProvider {
             }
         }
         toBlock(MVBlocks.earth_block.get());
+        toBlock(MVBlocks.flail_mucus.get());
+        toBlock(MVBlocks.dried_flail_mucus.get());
 
     }
     private void toBlock(Block b) {
