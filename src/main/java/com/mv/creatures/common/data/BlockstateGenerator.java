@@ -14,8 +14,8 @@ public class BlockstateGenerator extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels(){
         simpleBlock(MVBlocks.earth_block.get());
-        simpleBlock(MVBlocks.flail_mucus.get());
-        simpleBlock(MVBlocks.dried_flail_mucus.get());
+        simpleBlock(MVBlocks.mucus.get());
+        simpleBlock(MVBlocks.dried_mucus.get());
 
     }
 }

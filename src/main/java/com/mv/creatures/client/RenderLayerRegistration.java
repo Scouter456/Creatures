@@ -11,7 +11,9 @@ public class RenderLayerRegistration {
         RenderType translucent = RenderType.getTranslucent();
         RenderType translucentnocrumb = RenderType.getTranslucentNoCrumbling();
         RenderType solid = RenderType.getSolid();
-        RenderTypeLookup.setRenderLayer(MVBlocks.flail_mucus.get(), translucent);
-        RenderTypeLookup.setRenderLayer(MVBlocks.dried_flail_mucus.get(), translucent);
+        RenderTypeLookup.setRenderLayer(MVBlocks.mucus.get(), translucent);
+        RenderTypeLookup.setRenderLayer(MVBlocks.mucus_layers.get(), translucent);
+        RenderTypeLookup.setRenderLayer(MVBlocks.dried_mucus.get(), solid);
+        RenderTypeLookup.setRenderLayer(MVBlocks.dried_mucus_layers.get(), solid);
     }
 }

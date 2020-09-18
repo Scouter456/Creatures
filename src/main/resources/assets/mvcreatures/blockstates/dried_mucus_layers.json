@@ -1,0 +1,12 @@
+{
+    "variants": {
+		"layers=1":{"model":"mvcreatures:block/dried_mucus_height2"},
+        "layers=2":{"model":"mvcreatures:block/dried_mucus_height4"},
+        "layers=3":{"model":"mvcreatures:block/dried_mucus_height6"},
+        "layers=4":{"model":"mvcreatures:block/dried_mucus_height8"},
+        "layers=5":{"model":"mvcreatures:block/dried_mucus_height10"},
+        "layers=6":{"model":"mvcreatures:block/dried_mucus_height12"},
+        "layers=7":{"model":"mvcreatures:block/dried_mucus_height14"},
+        "layers=8":{"model":"mvcreatures:block/mucus"}
+    }
+}

@@ -5,8 +5,10 @@ import net.minecraft.util.IStringSerializable;
 import java.util.Locale;
 
 public enum MucusVariant implements IStringSerializable {
-    flail_mucus(),
-    dried_flail_mucus();
+    mucus(),
+    mucus_layers(),
+    dried_mucus_layers(),
+    dried_mucus();
 
     @Override
     public String getString() {
