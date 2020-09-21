@@ -1,6 +1,7 @@
 package com.mv.creatures.common.entities;
 
 import com.mv.creatures.common.blocks.MVBlocks;
+import com.mv.creatures.common.sounds.MVSounds;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
@@ -35,7 +36,7 @@ public class EntityMVWorm extends MonsterEntity
 
         public static AttributeModifierMap.MutableAttribute registerAttributes() {
             return MonsterEntity.func_234295_eP_()
-                    .createMutableAttribute(Attributes.MAX_HEALTH, 40.0D)
+                    .createMutableAttribute(Attributes.MAX_HEALTH, 10.0D)
                     .createMutableAttribute(Attributes.MOVEMENT_SPEED, 0.28D);
         }
 
@@ -50,8 +51,10 @@ public class EntityMVWorm extends MonsterEntity
         }
     }
 
+
+
     @Override
-    protected SoundEvent getHurtSound(DamageSource source)   { return SoundEvents.ENTITY_SPIDER_HURT;
+    protected SoundEvent getHurtSound(DamageSource source)   { return MVSounds.MUCUS;
     }
     @Override
     protected SoundEvent getDeathSound()   { return SoundEvents.ENTITY_SPIDER_DEATH;

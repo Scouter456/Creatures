@@ -1,11 +1,16 @@
 package com.mv.creatures.common.blocks;
 
+import com.mv.creatures.common.entities.EntityMVWorm;
+import com.mv.creatures.common.entities.MVEntities;
+import com.mv.creatures.core.MVCreatures;
 import com.mv.creatures.enums.MucusVariant;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.material.PushReaction;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.IntegerProperty;
@@ -121,7 +126,6 @@ public class MVMucus extends Block {
         }
 
     }
-
 
     @Override
     @Deprecated

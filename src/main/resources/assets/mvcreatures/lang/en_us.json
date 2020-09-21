@@ -1,10 +1,12 @@
 {
   "itemGroup.mvcreatures": "MVCreatures",
 
+  "block.mvcreatures.dried_mucus": "Dried Mucus Block",
+  "block.mvcreatures.dried_mucus_layers": "Dried Mucus",
   "block.mvcreatures.earth_block": "Earth Block",
   "block.mvcreatures.jink_block": "Jink Block",
-  "block.mvcreatures.flail_mucus": "Flail Snail Mucus",
-  "block.mvcreatures.dried_flail_mucus": "Dried Flail Snail Mucus",
+  "block.mvcreatures.mucus": "Mucus Block",
+  "block.mvcreatures.mucus_layers": "Mucus",
 
   "item.mvcreatures.sand_worm_spawn_egg": "Sand Worm Spawn Egg",
   

@@ -1,7 +1,10 @@
 package com.mv.creatures.common.entities;
 
 import com.google.common.collect.Lists;
+import com.mv.creatures.client.renderer.entity.RenderMVFlailSnail;
 import com.mv.creatures.client.renderer.entity.RenderMVWorm;
+
+import com.mv.creatures.common.entities.model.FlailSnail;
 import com.mv.creatures.common.entities.model.ModelMVWorm;
 import com.mv.creatures.common.items.MVItems;
 import com.mv.creatures.core.MVCreatures;
@@ -34,7 +37,7 @@ public class MVEntities {
     //listing entity
     public static final List<EntityType<?>> ALL = new ArrayList<>();
     public static final EntityType<EntityMVWorm> sand_worm = make(MVEntityNames.SAND_WORM, EntityMVWorm::new, EntityClassification.MONSTER, 0.9F, 0.9F);
-
+    public static final EntityType<EntityMVFlailSnail> flail_snail = make(MVEntityNames.FLAIL_SNAIL, EntityMVFlailSnail::new, EntityClassification.MONSTER, 1F, 2.5F);
 
     private static <E extends Entity> EntityType<E> make(ResourceLocation id, EntityType.IFactory<E> factory, EntityClassification classification, float width, float height) {
         return build(id, makeBuilder(factory, classification).size(width, height));
@@ -73,6 +76,7 @@ public class MVEntities {
     public static void registerSpawnEggs(RegistryEvent.Register<Item> evt) {
         IForgeRegistry<Item> r = evt.getRegistry();
         r.register(spawnEgg(sand_worm, 0x83653b, 0xffefca));
+        r.register(spawnEgg(flail_snail, 0x84653b, 0xffecca));
 
     }
 
@@ -80,12 +84,15 @@ public class MVEntities {
     @SubscribeEvent
     public static void RegisterEntities(RegistryEvent.Register<EntityType<?>> evt) {
         evt.getRegistry().registerAll(ALL.toArray(new EntityType<?>[0]));
-        registerCustomSpawnEntry(sand_worm,getSandWormBiomes,2000,2,4 , EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawn);
+        registerCustomSpawnEntry(sand_worm, getSandWormBiomes,2000,2,4 , EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, MonsterEntity::canMonsterSpawn);
+
     }
 
     //registering entity attributes
     public static void addEntityAttributes() {
         GlobalEntityTypeAttributes.put(sand_worm, EntityMVWorm.registerAttributes().create());
+        GlobalEntityTypeAttributes.put(flail_snail, EntityMVFlailSnail.registerAttributes().create());
+
 
     }
 
@@ -96,6 +103,7 @@ public class MVEntities {
     @OnlyIn(Dist.CLIENT)
     public static void registerEntityRenderer() {
         RenderingRegistry.registerEntityRenderingHandler(sand_worm, m -> new RenderMVWorm(m, new ModelMVWorm(), 4.0F));
+        RenderingRegistry.registerEntityRenderingHandler(flail_snail, m -> new RenderMVFlailSnail(m, new FlailSnail(), 1.0F));
 
     }
 

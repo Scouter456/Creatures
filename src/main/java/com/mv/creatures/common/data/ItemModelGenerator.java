@@ -28,6 +28,7 @@ public class ItemModelGenerator extends ItemModelProvider {
             }
         }
         toBlock(MVBlocks.earth_block.get());
+        toBlock(MVBlocks.jink_block.get());
         toBlock(MVBlocks.mucus.get());
         toBlock(MVBlocks.dried_mucus.get());
 
